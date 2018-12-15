@@ -1,0 +1,23 @@
+<div *ngIf="show1">
+ID
+<br>
+<input type="text" required placeholder="id" [(ngModel)]="leuser.id" id="leuser.id">
+<br> 
+REASON
+<br>
+<input type="text" required placeholder="reason" [(ngModel)]="leuser.password" id="leuser.password"> 
+ <br>
+ CURRENTTIME
+ <br>
+<input type="text" required placeholder="XXXX-XX-XX" [(ngModel)]="leuser.startTime" id="leuser.startTime"> 
+<br>
+ STARTTIME
+ <br>
+<input type="text" required placeholder="XXXX-XX-XX" [(ngModel)]="leuser.startTime" id="leuser.startTime"> 
+<br>
+FINALTIME
+<br>
+<input type="text" required placeholder="XXXX-XX-XX" [(ngModel)]="leuser.finalTime" id="leuser.finalTime"> 
+ <br>
+ <input class="logo" type="button" value="submit" (click)="submit()">
+ </div>

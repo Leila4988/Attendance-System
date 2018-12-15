@@ -1,0 +1,25 @@
+{
+  "leave": [
+    {
+      "id": "a",
+      "reason": "a",
+      "currentTime": "q",
+      "startTime": "2018-8-9",
+      "finalTime": "2018-8-13"
+    },
+    {
+      "id": "b",
+      "reason": "b",
+      "currentTime": "q",
+      "startTime": "2018-8-9",
+      "finalTime": "2018-8-13"
+    },
+    {
+      "id": "c",
+      "reason": "c",
+      "currentTime": "q",
+      "startTime": "2018-8-9",
+      "finalTime": "2018-8-13"
+    }
+  ]
+}

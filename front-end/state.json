@@ -1,0 +1,21 @@
+{
+    "states": [
+      {
+        "id": "11",
+        "schedule": 2
+      },
+      {
+        "id": "12",
+        "schedule": 0
+      },
+      {
+        "id": "13",
+        "schedule": 2
+      },
+      {
+        "id": "21",
+        "schedule": 3
+      }
+  ]
+  }
+  

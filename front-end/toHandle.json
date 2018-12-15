@@ -1,0 +1,20 @@
+{
+  "handles": [
+    {
+      "id": "1",
+      "name": "海鲜",
+      "department": "财务处",
+      "reason": "reason1",
+      "totalTime": 3,
+      "state": true
+    },
+    {
+      "id": "2",
+      "name": "这周六",
+      "department": "行政部",
+      "reason": "reason2",
+      "totalTime": 4,
+      "state": false
+    }
+  ]
+}

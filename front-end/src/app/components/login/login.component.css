@@ -1,0 +1,42 @@
+html{
+    height :100%;
+}
+body {
+    background: rgb(232, 236, 239);
+    font-family: Roboto-Light, Helvetica, Arial, sans-serif;
+    height :150%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+header {
+    text-align: center;
+}
+header img {
+    height: 40px;
+}
+section {
+    width: 300px;
+    background: white;
+    margin: 0 auto;
+    padding: 30px;
+    font-size: 14px;
+    color: #a7b1bd;
+    height :100%;
+}
+section p {
+    text-align: center;
+}
+input {
+    height: 30px;
+    margin-bottom: 8px;
+    margin-top: 4px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid rgb(238, 239, 241);
+    text-indent: 1em;
+}
+.logo {
+    background: rgb(32, 167, 82);
+    color: white;
+    height: 35px;
+}
