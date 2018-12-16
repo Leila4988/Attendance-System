@@ -10,11 +10,11 @@ import { template } from '@angular/core/src/render3';
 })
 export class LeaveComponent implements OnInit {
 
-  @Input() show1 = false;
+  @Input() showl = false;
   //通过输入属性来传输ID
-  @Input() userid: string;
+  @Input() user_id: string;
   leuser:Leave = {
-    id : this.userid,
+    id : this.user_id,
     reason : "a",
     cuttentTime : "q",
     startTime : "2018-8-9",
@@ -29,7 +29,7 @@ export class LeaveComponent implements OnInit {
   }
 
   submit(){
-    console.log(this.userid);
+    console.log(this.user_id);
     //this.leaveService.postLeave(this.leuser).then();
   }
 

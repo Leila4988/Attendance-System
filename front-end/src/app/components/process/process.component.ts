@@ -8,7 +8,7 @@ import { Process } from '../../domain/pr';
 })
 export class ProcessComponent implements OnInit {
   @Input() state: Process;
-  @Input() show2: boolean;
+  @Input() showp: boolean;
   l1:string = "";
   l2:string = "";
   l3:string = "";
@@ -23,7 +23,7 @@ export class ProcessComponent implements OnInit {
   
   ngOnChanges(){
     this.count++;
-    if(this.count > 1 && this.show2){
+    if(this.count > 1 && this.showp){
       console.log(this.state);
       if (this.state.schedule == 0) {
       this.l1 = "step-start";

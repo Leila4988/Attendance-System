@@ -20,11 +20,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { LogInComponent } from './components/login/login.component';
 import { TestComponent } from './components/test/test.component';
-import { DetailComponent } from './components/detail/detail.component' 
 import { LeaveComponent } from './components/leave/leave.component';
-import { MenuComponent } from './components/menu/menu.component';
 import { ProcessComponent } from './components/process/process.component';
 import { HandleComponent } from './components/handle/handle.component';
+import { ManagerMenuComponent } from './components/manager-menu/manager-menu.component';
+import { EmployeeMenuComponent } from './components/employee-menu/employee-menu.component';
+import { AlreadyCheckedComponent } from './components/already-checked/already-checked.component';
+import { LeaveLogComponent } from './components/leave-log/leave-log.component';
+import { DepartmentLogComponent } from './components/department-log/department-log.component';
 
 let rootRouterMoudle: ModuleWithProviders = RouterModule.forRoot(rootRouterConfig);
 
@@ -34,11 +37,14 @@ let rootRouterMoudle: ModuleWithProviders = RouterModule.forRoot(rootRouterConfi
     //引入了组件
     LogInComponent,
     TestComponent,
-    DetailComponent,
     LeaveComponent,
-    MenuComponent,
     ProcessComponent,
-    HandleComponent
+    HandleComponent,
+    ManagerMenuComponent,
+    EmployeeMenuComponent,
+    AlreadyCheckedComponent,
+    LeaveLogComponent,
+    DepartmentLogComponent
   ],
   //注册了HTTP服务
   imports: [

@@ -25,7 +25,7 @@ export class ToHandleService {
 
   //使用get下载尚未处理的审批
   //获取用户信息
-  getHandles(): Promise<Handle[]> {
+  getHandlesByid(id: string): Promise<Handle[]> {
     const url = `${this.api_url}`;
     return this.http.get(url, {headers: this.headers})
         .toPromise()

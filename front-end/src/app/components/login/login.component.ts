@@ -44,7 +44,6 @@ export class LogInComponent implements OnInit {
             setTimeout(()=>{
               this._router.navigateByUrl('/user/' + this.inuser.id);
             })
-            
           }
           else{
             setTimeout(()=>{
