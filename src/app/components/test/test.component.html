@@ -1,0 +1,11 @@
+<p>
+  test works!
+</p>
+<div *ngIf="edited" class="alert alert-success box-msg" role="alert">
+  <form>
+      <strong>List Saved!</strong> Your changes has been saved.
+  </form>
+    <strong>List Saved!</strong> Your changes has been saved.
+</div>
+<input class="logo" type="button" value="Login" (click)="check()">
+<input type="text" required placeholder="id" [(ngModel)]="user_id" id="r.id">

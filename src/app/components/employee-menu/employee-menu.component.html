@@ -1,0 +1,25 @@
+<div style="width:500px">
+<div style="height:200px;width:100px;float:left;"> 
+    <div class="div1">
+      <br>
+      <h1>考勤系统</h1>
+      <br>
+      <br>
+    </div>
+  
+    <div class="div2">
+      <button class="button" (click)="leave()">请假申请</button>
+      <br>
+      <button class="button" (click)="process()">请假审批进度查询</button>
+      <br>
+      <button class="button" (click)="searchr()">请假记录查询</button>
+      <br>
+      <button class="button" (click)="searchd()">部门考勤查询</button>
+    </div>
+</div>
+<div class="son"><app-leave [showl]="showl" [user_id]="user_id"></app-leave>
+<app-process [showp]="show2" ></app-process>
+<app-leave-log [showr]="showr" [user_id]="user_id"></app-leave-log>
+<app-department-log [showd]="showd" [user_id]="user_id"></app-department-log></div>
+</div>
+  

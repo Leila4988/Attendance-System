@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.hik.mapper.ClockInMapper">
+<resultMap id="getclock",type="com.hik.model.Clock">
+<result column="eid"  property="eid"/>
+ <result column="clockintime" property="clockintime"/>
+ <result column="clockouttime" property="clockouttime"/>
+</resultMap>
+  <select id="getclockin" parameterType="java.lang.String" resultMap="getclock">
+      select * from clockin where eid=#{eid} 
+  </select>
+</mapper>

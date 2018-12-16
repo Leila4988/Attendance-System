@@ -1,0 +1,26 @@
+<div *ngIf="showd">
+    <table>
+        <caption>部门请假记录</caption>
+        <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>姓名</th>
+                    <th>部门</th>
+                    <th>请假原因</th>
+                    <th>请假时间</th>
+                    <th >审批状态</th>
+                </tr>
+            </thead>
+            <tbody>    
+            <tr class="handels"*ngFor="let handelss of handles"  >
+                <td class="tr">{{handelss.id}}</td>
+                <td class="tr">{{handelss.name}}</td>
+                <td class="tr">{{handelss.department}}</td>
+                <td class="tr">{{handelss.reason}}</td>
+                <td class="tr">{{handelss.totalTime}}</td>
+                <td class="tr">{{handelss.state}}</td>
+            <tr>
+            </tbody>
+    </table>
+
+</div>

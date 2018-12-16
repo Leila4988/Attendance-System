@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.hik.mapper.EmpLeaveMapper">
+ <resultMap type="com.hik.model.EmpLeave" id="gethandle">
+        <result column="eid"  property="eid"/>
+        <result column="ename" property="ename"/>
+        <result column="reason"  property="reason"/>
+        <result column="deaprtment" property="department"/>
+        <result column="handle" property="handle"/>
+        <result column="ifsuccess" property="ifsuccess"/>
+     </resultMap>
+     <!-- 员工id查询 -->
+<select id="bydepartment" parameterType="java.lang.String" resultMap="gethandle">
+  select employee.eid,employee.ename,employee.department,leaveform.handle,leaveform.reason,leaveform.ifsuccess from employee left join leaveform on employee.eid=leaveform.eid where employee.department=#{department} 
+</select>
+<!-- 管理者id -->
+<!-- 经理 -->
+<select id="getunhandle"  parameterType="int" resultMap="gethandle">
+      select employee.eid,employee.ename,employee.department,leaveform.handle,leaveform.reason,leaveform.ifsuccess from employee left join leaveform on employee.eid=leaveform.eid where leaveform.handle=#{handle}
+</select>
+<select id="gethandled"  parameterType="int" resultMap="gethandle">
+      select employee.eid,employee.ename,employee.department,leaveform.handle,leaveform.reason,leaveform.ifsuccess from employee left join leaveform on employee.eid=leaveform.eid where leaveform.handle=#{handle}
+</select>
+<!-- 部门经理 -->
+  <select id="handledepart"  parameterType="java.lang.String" resultMap="gethandle">
+  select employee.eid,employee.ename,employee.department,leaveform.handle,leaveform.reason,leaveform.ifsuccess from employee left join leaveform on employee.eid=leaveform.eid where employee.department=#{department} and leaveform.handle=1
+</select>
+
+ <select id="undepart"  parameterType="java.lang.String" resultMap="gethandle">
+  select employee.eid,employee.ename,employee.department,leaveform.handle,leaveform.reason,leaveform.ifsuccess from employee left join leaveform on employee.eid=leaveform.eid where employee.department=#{department} and leaveform.handle=0
+</select>
+ <select id="getall"  parameterType="java.lang.String" resultMap="gethandle">
+  select employee.eid,employee.ename,employee.department,leaveform.handle,leaveform.reason,leaveform.ifsuccess from employee left join leaveform on employee.eid=leaveform.eid where employee.eid=#{eid}
+</select>
+</mapper>

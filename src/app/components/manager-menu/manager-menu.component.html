@@ -1,0 +1,21 @@
+<div style="width:700px">
+<div style="height:200px;width:100px;float:left;"> 
+    <div class="div1">
+      <br>
+      <h1>考勤系统</h1>
+      <br>
+      <br>
+    </div>
+  
+    <div class="div2">
+      <button class="button" (click)="handle()">待审批记录查询</button>
+      <br>
+      <button class="button" (click)="search()" >已审批记录查询</button>
+    </div>
+</div>
+<div class="son">
+  <app-handle [showh]="showh" [user_id]="user_id"></app-handle>
+  <app-already-checked [shows]="shows" [user_id]="user_id"></app-already-checked>
+</div>
+</div>
+  

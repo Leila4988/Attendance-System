@@ -1,0 +1,37 @@
+
+    <form *ngIf="showl" action="" method="post" class="smart-green">
+      <h1>请假申请
+      </h1>
+      <label>
+        <span >ID :</span>
+        <input id="leuser.id" [(ngModel)]="leuser.id" type="text" name="leuser.id" placeholder="ID" />
+      </label>
+  
+      <label>
+        <span>请假原因 :</span>
+        <input id="leuser.password" [(ngModel)]="leuser.reason" type="text" name="leuser.password" placeholder="原因" />
+      </label>
+  
+      <label>
+        <span>当前时间 :</span>
+        <input id="leuser.startTime" [(ngModel)]="leuser.startTime" type="text" name="leuser.startTime" placeholder="XXXX-XX-XX" />
+      </label>
+  
+      <label>
+        <span>请假开始时间 :</span>
+        <input id="leuser.startTime" [(ngModel)]="leuser.startTime" type="text" name="leuser.startTime" placeholder="XXXX-XX-XX" />
+      </label>
+  
+      <label>
+        <span>请假结束时间 :</span>
+        <input id="leuser.finalTime" [(ngModel)]="leuser.finalTime" type="text" name="leuser.finalTime" placeholder="XXXX-XX-XX" />
+      </label>
+  
+      <label>
+        <span>&nbsp;</span>
+        <input type="button" class="button" value="submit" (click)="submit()"/>
+      </label>
+    </form>
+  
+   
+  

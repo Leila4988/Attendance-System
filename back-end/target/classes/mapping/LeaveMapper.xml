@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace = "com.hik.mapper.LeaveMapper">
+     <resultMap type="com.hik.model.Leave" id="getleave">
+        <result column="eid"  property="eid"/>
+        <result column="reason"  property="reason"/>
+        <result column="asktime" property="asktime"/>
+        <result column="leavebegin" property="leavebegin"/>
+        <result column="leaveend" property="leaveend"/>
+     </resultMap>
+	
+  <select id="getleaveinfo" parameterType="java.lang.String" resultMap="getleave">
+        select eid,reason,asktime,leavebegin,leaveend from leaveform where eid=#{eid}
+  </select>
+  
+  <insert id="askleave">
+       INSERT INTO leaveform(eid,reason,leavebegin,leaveend,asktime,handle,ifsuccess) VALUES (#{eid},#{reason},#{leavebegin},#{leaveend},#{askime},0,false)  
+  </insert>
+  <delete id="deleteleave" parameterType="java.lang.String">
+      DELETE FROM leaveform WHERE eid=#{eid} AND ifsuccess=false
+  </delete>
+</mapper>
