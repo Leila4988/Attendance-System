@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../../domain/as'
-//import { USERS } from 'src/app/mock-as';
 import { LoginService } from '../../service/login.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -40,9 +39,8 @@ export class LogInComponent implements OnInit {
         {
           //根据用户类型，路由到不同的组件里
           if(this.inuser.id[0]=='1'){
-            alert("登录成功");
             setTimeout(()=>{
-              this._router.navigateByUrl('/user/' + this.inuser.id);
+              this._router.navigateByUrl('/employee/' + this.inuser.id);
             })
           }
           else{

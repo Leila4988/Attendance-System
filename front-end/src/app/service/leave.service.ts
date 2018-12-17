@@ -10,7 +10,7 @@ export class LeaveService {
   private headers;
 
   constructor(private http: Http, private apiService: ApiService) {
-        this.api_url = apiService.getUrl() + '/leave';
+        this.api_url = apiService.getUrl() + '/leave/add';
         this.headers = apiService.getHeaders();
     }
 
@@ -22,7 +22,9 @@ export class LeaveService {
           .then()
           .catch(this.handleError);
   }
+
   private handleError(error: any): Promise<any> {
+      alert("剩余年假数不够，无法请假！");
     console.error('An error occurred', error); 
     return Promise.reject(error.message || error);
 }

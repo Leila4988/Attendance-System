@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
 <mapper namespace="com.hik.mapper.ClockInMapper">
-<resultMap id="getclock",type="com.hik.model.Clock">
+<resultMap id="getclock" type="com.hik.model.ClockIn">
 <result column="eid"  property="eid"/>
  <result column="clockintime" property="clockintime"/>
  <result column="clockouttime" property="clockouttime"/>

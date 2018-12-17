@@ -1,37 +1,30 @@
 <div *ngIf="showh">
-    <table>
-        <caption>审批表一览</caption>
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>姓名</th>
-            <th>部门</th>
-            <th>请假原因</th>
-            <th>请假时间</th>
-            <th >审批状态</th>
-            <th></th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-        <tr class="handels">
-            <ul class="handels">
-            <li *ngFor="let handelss of handles">
-            <td>{{handelss.id}}</td>
-            <td>{{handelss.name}}</td>
-            <td>{{handelss.department}}</td>
-            <td>{{handelss.reason}}</td>
-            <td>{{handelss.totalTime}}</td>
-            <td><p><input type="checkbox" [(ngModel)]="handelss.state" ng-true-value="true" ng-false-value="false" name="category1" value="true" />同意</p></td>
-        
-            </li>
-            </ul>
-        <tr>
-      
-        </tbody>
-    </table>
-    <br>
-     <input class="logo" type="button" value="submit" (click)="submit()">
-
-</div>
+        <table>
+            <caption>审批表一览</caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>姓名</th>
+                    <th>部门</th>
+                    <th>请假原因</th>
+                    <th>请假时间</th>
+                    <th >审批状态</th>
+                </tr>
+            </thead>
+            <tbody>    
+            <tr class="handels"*ngFor="let handelss of handles"  >
+                <td class="tr">{{handelss.id}}</td>
+                <td class="tr">{{handelss.name}}</td>
+                <td class="tr">{{handelss.department}}</td>
+                <td class="tr">{{handelss.reason}}</td>
+                <td class="tr">{{handelss.totalTime}}</td>
+                    <td><p><input type="checkbox" [(ngModel)]="handelss.state" ng-true-value="true" ng-false-value="false" name="category1" value="true" />同意</p></td>
+            <tr>
+          
+            </tbody>
+        </table>
+        <br>
+        <input style="margin-left: 68%" class="logo" type="button" value="submit" (click)="submit()">
+    
+    </div>
+    

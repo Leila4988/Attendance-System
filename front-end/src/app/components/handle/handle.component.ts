@@ -22,7 +22,7 @@ export class HandleComponent implements OnInit {
   }
   ngOnInit() {
     //由服务去获取用户列表数据
-    this.handleService.getHandlesByid(this.user_id).then(handles => this.handles = handles);
+    this.handleService.getUnHandlesByid(this.user_id).then(handles => this.handles = handles);
   }
 
 }

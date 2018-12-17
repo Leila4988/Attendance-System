@@ -1,13 +1,19 @@
-<div *ngIf="state" style="width:70%; margin:50px auto" >
-    <h5>请假进程：</h5>
-    <ol class="ui-step ui-step-blue ui-step-3">
-
-  
+<div *ngIf="state" style="width:70%; margin:50px auto " >
+    <br>
+    <ol class="ui-step ui-step-blue ui-step-5" style="margin-top:15%">
+        <li class={{l0}}>
+            <div class="ui-step-line"></div>
+               <div class="ui-step-cont" >
+                   <span class="ui-step-cont-number">1</span>
+                   <span class="ui-step-cont-text">提交请假申请</span>
+               </div>
+           </li>
+       
         <li class={{l1}}>
          <div class="ui-step-line"></div>
             <div class="ui-step-cont" >
-                <span class="ui-step-cont-number">1</span>
-                <span class="ui-step-cont-text">部门经理审批通过</span>
+                <span class="ui-step-cont-number">2</span>
+                <span class="ui-step-cont-text">{{s2}}部门经理审批</span>
             </div>
         </li>
     
@@ -15,17 +21,29 @@
         <li class={{l2}}>
             <div class="ui-step-line"></div>
             <div class="ui-step-cont">
-                <span class="ui-step-cont-number">2</span>
-                <span class="ui-step-cont-text">副总经理审批通过</span>
+                <span class="ui-step-cont-number">3</span>
+                <span class="ui-step-cont-text">{{s3}}副总经理审批</span>
             </div>
         </li>
 
         <li class={{l3}}>
             <div class="ui-step-line"></div>
             <div class="ui-step-cont">
-                <span class="ui-step-cont-number">3</span>
-                <span class="ui-step-cont-text">总经理审批通过</span>
+                <span class="ui-step-cont-number">4</span>
+                <span class="ui-step-cont-text">{{s4}}总经理审批</span>
+            </div>
+        </li>
+
+        <li class={{l4}}>
+            <div class="ui-step-line"></div>
+            <div class="ui-step-cont">
+                <span class="ui-step-cont-number">5</span>
+                <span class="ui-step-cont-text">请假成功</span>
             </div>
         </li>
     </ol>
+    <br>
+    <input class="mmm" type="button" value="删除请假申请" (click)="delete()">
+   
+    <br>
 </div>	

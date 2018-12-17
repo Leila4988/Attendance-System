@@ -2,75 +2,101 @@ div{
     padding-top:10%;
     padding-left:10%;
   
+  
+  }
+  caption{
+    font: 24px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    color: #666;
   }
   table {
   
-      border-collapse: collapse;
+    border-collapse: collapse;
   
-      font-family: Futura, Arial, sans-serif;
+    font-family: Futura, Arial, sans-serif;
   
   }
   
   caption {
   
-      font-size: larger;
+    font-size: larger;
   
-      margin: 1em auto;
+    margin: 1em auto;
   
   }
   
   th,td {
   
-      padding: .65em;
+    padding: .65em;
   
   }
   
   th {
   
-      background: #555;
+    background: #9DC45F;
   
-      /* border: 1px solid #777; */
+    /* border: 1px solid #777; */
+    font: 18px Arial, Helvetica, sans-serif;
   
-      color: #fff;
+    color: #fff;
   
   }
   
   td {
   
-      /* border: 1px solid #777; */
+    /* border: 1px solid #777; */
+  
+  }
+  thead,tbody{
+    width: 150px;
+  }
+  
+  tbody tr{
+  
+    background: #fff;
+    text-align:center;
+    font: 12px Arial, Helvetica, sans-serif;
+    color: #666;
+    width:150px;
   
   }
   
-  tbody tr:nth-child(odd) {
   
-      background: #ccc;
-  
-  }
   
   th:first-child {
   
-      border-radius: 9px 0 0 0;
+    border-radius: 9px 0 0 0;
   
   }
-
-  .tr{
-      width:150px;
-  }
+  
   
   th:last-child {
   
-      border-radius: 0 9px 0 0;
+    border-radius: 0 9px 0 0;
   
   }
   
   tr:last-child td:first-child {
   
-      border-radius: 0 0 0 9px;
+    border-radius: 0 0 0 9px;
   
   }
   
   tr:last-child td:last-child {
-      border-radius: 0 0 9px 0;
+    border-radius: 0 0 9px 0;
   }
   
+  .logo {
+    background-color: #9DC45F;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-border-radius: 5px;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    text-shadow: 1px 1px 1px #949494;
+    margin-right: 20px;
+  }
+  .logo:hover {
+    background-color:#80A24A;
+  }
   

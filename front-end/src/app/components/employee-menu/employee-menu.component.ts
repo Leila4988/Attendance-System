@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Process } from '../../domain/pr';
 import { InquireService } from '../../service/inquire.service';
+import { scheduleMicroTask } from '@angular/core/src/util';
 
 @Component({
   selector: 'app-employee-menu',
@@ -21,8 +22,7 @@ export class EmployeeMenuComponent implements OnInit {
 
   user_id: string;
   ngOnInit() {
-    //this.user_id = this.activatedRoute.snapshot.params['id'];
-    this.user_id = "11";
+    this.user_id = this.activatedRoute.snapshot.params['id'];
     this.inquireService.inquireState(this.user_id).then(state => 
       this.temp_state = state);
   }
@@ -32,6 +32,8 @@ export class EmployeeMenuComponent implements OnInit {
     this.showp = false;
     this.showr = false;
     this.showd = false;
+    this.inquireService.inquireState(this.user_id).then(state => 
+      this.temp_state = state);
     this.state = null;
   }
   process(){
@@ -39,6 +41,8 @@ export class EmployeeMenuComponent implements OnInit {
     this.showp = true;
     this.showr = false;
     this.showd = false;
+    this.inquireService.inquireState(this.user_id).then(state => 
+      this.temp_state = state);
     this.state = this.temp_state;
   }
   searchr(){
@@ -46,6 +50,8 @@ export class EmployeeMenuComponent implements OnInit {
     this.showp = false;
     this.showr = true;
     this.showd = false;
+    this.inquireService.inquireState(this.user_id).then(state => 
+      this.temp_state = state);
     this.state = null;
   }
   searchd(){
@@ -53,6 +59,8 @@ export class EmployeeMenuComponent implements OnInit {
     this.showp = false;
     this.showr = false;
     this.showd = true;
+    this.inquireService.inquireState(this.user_id).then(state => 
+      this.temp_state = state);
     this.state = null;
   }
 

@@ -10,7 +10,7 @@ export class LoginService {
   private headers;
 
   constructor(private http: Http, private apiService: ApiService) {
-        this.api_url = apiService.getUrl() + '/users';
+        this.api_url = apiService.getUrl() + '/loggin';
         this.headers = apiService.getHeaders();
     }
 
@@ -26,9 +26,5 @@ export class LoginService {
     console.error('An error occurred', error); 
     return Promise.reject(error.message || error);
 }
-
-  //  getUsers(): Promise<User[]>{
-  //    return Promise.resolve(USERS);
-  //  }
   
 }

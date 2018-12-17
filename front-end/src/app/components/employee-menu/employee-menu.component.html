@@ -1,4 +1,7 @@
-<div>
+<body style="width:1200px; height:1000px; background-color: rgb(232, 236, 239);">
+<div style="width:1000px; height:20px;"></div>
+<div style="width:1000px; ">
+<div style="height:200px;width:100px;float:left; margin-top:-5%"> 
     <div class="div1">
       <br>
       <h1>考勤系统</h1>
@@ -16,8 +19,12 @@
       <button class="button" (click)="searchd()">部门考勤查询</button>
     </div>
 </div>
+<div class="son">
 <app-leave [showl]="showl" [user_id]="user_id"></app-leave>
-<app-process [showp]="show2" [state]="state"></app-process>
+<app-process [state]="state"></app-process>
 <app-leave-log [showr]="showr" [user_id]="user_id"></app-leave-log>
 <app-department-log [showd]="showd" [user_id]="user_id"></app-department-log>
+</div>
+</div>
+</body>
   

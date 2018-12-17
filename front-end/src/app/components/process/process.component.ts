@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, Input, Renderer2,ElementRef, ViewChild } from '@angular/core';
 import { Process } from '../../domain/pr';
+import { ToHandleService } from '../../service/to-handle.service';
 
 @Component({
   selector: 'app-process',
@@ -8,44 +9,84 @@ import { Process } from '../../domain/pr';
 })
 export class ProcessComponent implements OnInit {
   @Input() state: Process;
-  @Input() showp: boolean;
+  l0:string = "";
   l1:string = "";
   l2:string = "";
   l3:string = "";
+  l4:string = "";
+
+  s2:string = "";
+  s3:string = "";
+  s4:string = "";
+
   count = 0;
   
-   constructor(){
+   constructor(private toHandleService: ToHandleService){
    }
 
   ngOnInit() {
-    
+
   }
   
   ngOnChanges(){
     this.count++;
-    if(this.count > 1 && this.showp){
+    console.log("count"+this.count);
+    console.log(this.state);
+    if(this.count > 1 && this.state != null){
       console.log(this.state);
-      if (this.state.schedule == 0) {
-      this.l1 = "step-start";
-      this.l2 = "step-start";
-      this.l3 = "step-end";
+    if (this.state.schedule == 0) {
+        this.l0 = "step-start step-done";
+        this.l1 = "step-start step-active";
+        this.l2 = "step-start";
+        this.l3 = "step-start";
+        this.l4 = "step-end";
+
+        this.s2 = "等待";
+        this.s3 ="";
+        this.s4 ="";
       }
       else if (this.state.schedule == 1){
-      this.l1 = "step-start step-done";
-      this.l2 = "step-start";
-      this.l3 = "step-end";
+        this.l0 = "step-start step-done";
+        this.l1 = "step-start step-done";
+        this.l2 = "step-start step-active";
+        this.l3 = "step-start";
+        this.l4 = "step-end";
+
+        this.s2 = "";
+        this.s3 ="等待";
+        this.s4 ="";
     }
     else if (this.state.schedule == 2){
+      this.l0 = "step-start step-done";
       this.l1 = "step-start step-done";
       this.l2 = "step-start step-done";
-      this.l3 = "step-end";
+      this.l3 = "step-start step-active";
+      this.l4 = "step-end";
+
+      this.s2 = "";
+      this.s3 ="";
+      this.s4 ="等待";
     }
     else if (this.state.schedule == 3){
+      this.l0 = "step-start step-done";
       this.l1 = "step-start step-done";
       this.l2 = "step-start step-done";
-      this.l3 = "step-end step-done";
+      this.l3 = "step-start step-done";
+      this.l4 = "step-end step-done";
     }
   }
   }
 
+  delete(){
+    this.toHandleService.deleteHandledByid(this.state.id);
+    this.l0 = "step-start";
+    this.l1 = "step-start";
+    this.l2 = "step-start";
+    this.l3 = "step-start";
+    this.l4 = "step-end";
+
+    this.s2 = "";
+    this.s3 ="";
+    this.s4 ="";
+  }
 }

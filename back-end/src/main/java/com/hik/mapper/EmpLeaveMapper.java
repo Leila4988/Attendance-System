@@ -20,4 +20,6 @@ public interface EmpLeaveMapper {
     //部门经理id
    List<EmpLeave> undepart(@Param("department") String department);
    List<EmpLeave> handledepart(@Param("department") String department);
+   void updatehan(@Param("handle") int handle,@Param("eid") String eid);
+   void handleend(@Param("eid")String  eid);
 }

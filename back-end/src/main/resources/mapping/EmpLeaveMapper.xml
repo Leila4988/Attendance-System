@@ -33,4 +33,10 @@
  <select id="getall"  parameterType="java.lang.String" resultMap="gethandle">
   select employee.eid,employee.ename,employee.department,leaveform.handle,leaveform.reason,leaveform.ifsuccess from employee left join leaveform on employee.eid=leaveform.eid where employee.eid=#{eid}
 </select>
+<update id="updatehan" parameterType="int" >
+  update leaveform set handle=#{handle} where eid=#{eid} and ifsuccess=false
+</update>
+<update id="handleend" parameterType="java.lang.String">
+  update leaveform set ifseccess = true where eid=#{eid} and ifsuccess == false 
+</update>
 </mapper>

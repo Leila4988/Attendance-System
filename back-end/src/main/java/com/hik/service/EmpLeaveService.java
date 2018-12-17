@@ -33,4 +33,10 @@ public List<EmpLeave> undepart(@Param("department") String department){
 public List<EmpLeave> handledepart(@Param("department") String department){
 	return empleave.handledepart(department);
 }
+public void updatehan(@Param("handle") int handle,@Param("eid") String eid) {
+	empleave.updatehan( handle,eid);
+}
+public void handleend(@Param("eid")String  eid) {
+	 empleave.handleend(eid);
+}
 }

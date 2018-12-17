@@ -1,23 +1,43 @@
 <div *ngIf="showl">
-ID
-<br>
-<input type="text" required placeholder="id" [(ngModel)]="leuser.id" id="leuser.id">
-<br> 
-REASON
-<br>
-<input type="text" required placeholder="reason" [(ngModel)]="leuser.password" id="leuser.password"> 
- <br>
- CURRENTTIME
- <br>
-<input type="text" required placeholder="XXXX-XX-XX" [(ngModel)]="leuser.startTime" id="leuser.startTime"> 
-<br>
- STARTTIME
- <br>
-<input type="text" required placeholder="XXXX-XX-XX" [(ngModel)]="leuser.startTime" id="leuser.startTime"> 
-<br>
-FINALTIME
-<br>
-<input type="text" required placeholder="XXXX-XX-XX" [(ngModel)]="leuser.finalTime" id="leuser.finalTime"> 
- <br>
- <input class="logo" type="button" value="submit" (click)="submit()">
- </div>
+    <h5>剩余请假天数:{{annual.annual}}</h5>
+    <form action="" method="post" class="smart-green">
+      <h1>请假申请
+      </h1>
+      <label>
+        <p>ID:
+        <input id="leuser.id" [(ngModel)]="leuser.id" type="text" name="leuser.id" placeholder="ID" />
+      </p>
+      </label>
+  
+      <label>
+        <p>请假原因 :
+        <input id="leuser.password" [(ngModel)]="leuser.reason" type="text" name="leuser.password" placeholder="原因" />
+        </p>
+      </label>
+  
+      <label>
+        <p>当前时间 :
+        <input id="leuser.startTime" [(ngModel)]="leuser.cuttentTime" type="text" name="leuser.startTime" placeholder="XXXX-XX-XX" />
+        </p>
+      </label>
+  
+      <label>
+        <p>请假开始时间 :
+        <input id="leuser.startTime" [(ngModel)]="leuser.startTime" type="text" name="leuser.startTime" placeholder="XXXX-XX-XX" />
+        </p>
+      </label>
+  
+      <label>
+        <p>请假结束时间 :
+        <input id="leuser.finalTime" [(ngModel)]="leuser.finalTime" type="text" name="leuser.finalTime" placeholder="XXXX-XX-XX" />
+        </p>
+      </label>
+  
+      <label>
+        <br>
+        <input style="margin-left: 85%" type="button" class="button" value="submit" (click)="submit()"/>
+      </label>
+    </form>
+  </div>
+   
+  

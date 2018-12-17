@@ -16,7 +16,7 @@ export class AlreadyCheckedComponent implements OnInit {
   constructor(private handleService: ToHandleService) { }
   ngOnInit() {
     //由服务去获取用户列表数据
-    this.handleService.getHandlesByid(this.user_id).then(handles => this.handles = handles);
+    this.handleService.getHandledByid(this.user_id).then(handles => this.handles = handles);
     console.log(this.handles);
   }
 

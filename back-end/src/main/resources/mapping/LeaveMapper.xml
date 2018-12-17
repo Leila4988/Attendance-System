@@ -11,13 +11,13 @@
      </resultMap>
 	
   <select id="getleaveinfo" parameterType="java.lang.String" resultMap="getleave">
-        select eid,reason,asktime,leavebegin,leaveend from leaveform where eid=#{eid}
+        select eid,reason,asktime,leavebegin,leaveend from leaveform where eid=#{eid} and  asktime=(select asktime  from leaveform where eid=#{eid}  order by asktime  desc limit 1) 
   </select>
   
   <insert id="askleave">
        INSERT INTO leaveform(eid,reason,leavebegin,leaveend,asktime,handle,ifsuccess) VALUES (#{eid},#{reason},#{leavebegin},#{leaveend},#{askime},0,false)  
   </insert>
   <delete id="deleteleave" parameterType="java.lang.String">
-      DELETE FROM leaveform WHERE eid=#{eid} AND ifsuccess=false
+      DELETE FROM leaveform WHERE eid=#{eid} and ifsuccess == false
   </delete>
 </mapper>

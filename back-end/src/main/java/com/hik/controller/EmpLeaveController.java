@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,6 +13,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.hik.model.EmpLeave;
 import com.hik.service.EmpLeaveService;
+import com.hik.service.LeaveService;
 
 @RequestMapping("/handle")
 @RestController
@@ -124,7 +126,7 @@ public String handled(@Param("eid")String eid){
 	
 }
 @RequestMapping(value="unhandle",method = RequestMethod.GET)
-public String unhandle(@Param("eid")String eid){
+public void unhandle(@Param("eid")String eid){
 	char s0=eid.charAt(0);
 	if(s0=='2') {
 		char s1=eid.charAt(1);
@@ -146,8 +148,7 @@ public String unhandle(@Param("eid")String eid){
 			temp.put("state", li.get(i).getIfsuccess());
 			jsa.add(temp);
 		}
-		re.put("handles",jsa);
-		return re.toJSONString() ;		
+		re.put("handles",jsa);		
 	}
 	else if(s0=='3') {
 		List<EmpLeave> li = eleave.getunhandle(1);
@@ -164,7 +165,7 @@ public String unhandle(@Param("eid")String eid){
 			jsa.add(temp);
 		}
 		re.put("handles",jsa);
-		return re.toJSONString() ;	
+	//	return re.toJSONString() ;	
 	}
 	else {
 		List<EmpLeave> li = eleave.getunhandle(2);
@@ -181,8 +182,23 @@ public String unhandle(@Param("eid")String eid){
 			jsa.add(temp);
 		}
 		re.put("handles",jsa);
-		return re.toJSONString() ;	
+		//return re.toJSONString() ;	
 	}
 	
+}
+@RequestMapping(value="update",method = RequestMethod.PUT)
+  public String updatehandle(@RequestBody JSONObject th){
+//	EmpLeave el=new EmpLeave();
+	JSONArray ja=th.getJSONArray("handles");
+	for(int i=0;i<ja.size();i++) {
+		JSONObject jp=ja.getJSONObject(i);
+		if(jp.getBoolean("state")==true) {
+			eleave.updatehan(jp.getInteger("totalTime")+1,jp.getString("id"));
+			if(jp.getInteger("totalTime")+1 == 3) {
+				   eleave.handleend(jp.getString("id"));	}		
+		}
+	}
+//	eleave.updatehan(th.getTotalTime(),th.getId());
+	return null;
 }
 }
