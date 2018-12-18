@@ -12,7 +12,5 @@ export const rootRouterConfig: Routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'login',component: LogInComponent },
     { path: 'employee/:id',component: EmployeeMenuComponent },
-    { path: 'manager/:id',component: ManagerMenuComponent },
-    { path: 'state',component: ProcessComponent },
-    { path: 'handle',component: HandleComponent }
+    { path: 'manager/:id',component: ManagerMenuComponent }
   ];

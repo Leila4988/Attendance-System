@@ -17,12 +17,17 @@ export class EmployeeMenuComponent implements OnInit {
   showd: boolean;
   //查询process时所需的state对象
   state: Process;
-  temp_state: Process;
+  temp_state: Process =
+  {
+    id:"123",
+    schedule: 0
+  };
   constructor(private activatedRoute: ActivatedRoute, private inquireService: InquireService) { }
 
   user_id: string;
   ngOnInit() {
-    this.user_id = this.activatedRoute.snapshot.params['id'];
+    //this.user_id = this.activatedRoute.snapshot.params['id'];
+    this.user_id = "11";
     this.inquireService.inquireState(this.user_id).then(state => 
       this.temp_state = state);
   }

@@ -29,7 +29,7 @@ import { AlreadyCheckedComponent } from './components/already-checked/already-ch
 import { LeaveLogComponent } from './components/leave-log/leave-log.component';
 import { DepartmentLogComponent } from './components/department-log/department-log.component';
 
-let rootRouterMoudle: ModuleWithProviders = RouterModule.forRoot(rootRouterConfig);
+let rootRouterMoudle: ModuleWithProviders = RouterModule.forRoot(rootRouterConfig,{useHash:true});
 
 @NgModule({
   declarations: [

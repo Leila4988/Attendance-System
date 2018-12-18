@@ -19,7 +19,7 @@ export class InquireService {
         this.state_url = apiService.getUrl() + '/handle/emphandle?eid=';
         this.leaveinfo_url = apiService.getUrl() + '/leave/leaveinfo?eid=';
         this.departmentinfo_url= apiService.getUrl() + '/handle/empdepartment?eid=';
-        this.annual_url = apiService.getUrl() + '/employee/annual?eid';
+        this.annual_url = apiService.getUrl() + '/employee/annual?eid=';
         this.headers = apiService.getHeaders();
     }
 

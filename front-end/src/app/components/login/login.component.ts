@@ -27,7 +27,7 @@ export class LogInComponent implements OnInit {
 
   ngOnInit() {
     //由服务去获取用户列表数据
-    this.loginService.getUsers().then(users => this.users = users);
+    // this.loginService.getUsers().then(users => this.users = users);
   }
 
   check(){
